@@ -24,17 +24,6 @@
             "type": "string",
             "required": true
         },
-        "project_url": {
-            "type": "media",
-            "multiple": false,
-            "required": true,
-            "allowedTypes": [
-                "images",
-                "files",
-                "videos",
-                "audios"
-            ]
-        },
         "image": {
             "type": "media",
             "multiple": true,
@@ -42,6 +31,9 @@
             "allowedTypes": [
                 "images"
             ]
+        },
+        "project_url": {
+            "type": "string"
         }
     }
 }

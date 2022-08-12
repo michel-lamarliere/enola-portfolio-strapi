@@ -1,4 +1,6 @@
+// @ts-ignore
 import parse = require('pg-connection-string').parse;
+// @ts-ignore
 const config = parse(process.env.DATABASE_URL);
 
 export default ({ env }) => ({

@@ -4,15 +4,35 @@
     "info": {
         "singularName": "project",
         "pluralName": "projects",
-        "displayName": "Project"
+        "displayName": "Project",
+        "description": ""
     },
     "options": {
         "draftAndPublish": true
     },
     "pluginOptions": {},
     "attributes": {
-        "Title": {
+        "Project_Name": {
             "type": "string"
+        },
+        "Description": {
+            "type": "text"
+        },
+        "Pro": {
+            "type": "boolean"
+        },
+        "Images": {
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ],
+            "type": "media",
+            "multiple": true
+        },
+        "Date": {
+            "type": "date"
         }
     }
 }

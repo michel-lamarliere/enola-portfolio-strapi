@@ -4,34 +4,44 @@
     "info": {
         "singularName": "review",
         "pluralName": "reviews",
-        "displayName": "Review"
+        "displayName": "Review",
+        "description": ""
     },
     "options": {
         "draftAndPublish": true
     },
     "pluginOptions": {},
     "attributes": {
-        "Client": {
-            "type": "string"
+        "client": {
+            "type": "string",
+            "required": true
         },
-        "Review": {
-            "type": "richtext"
+        "review": {
+            "type": "richtext",
+            "required": true
         },
-        "Name": {
-            "type": "string"
+        "name": {
+            "type": "string",
+            "required": true
         },
-        "Image": {
+        "project_url": {
+            "type": "media",
+            "multiple": false,
+            "required": true,
             "allowedTypes": [
                 "images",
                 "files",
                 "videos",
                 "audios"
-            ],
-            "type": "media",
-            "multiple": false
+            ]
         },
-        "URL": {
-            "type": "string"
+        "image": {
+            "type": "media",
+            "multiple": true,
+            "required": true,
+            "allowedTypes": [
+                "images"
+            ]
         }
     }
 }

@@ -12,27 +12,33 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Project_Name": {
-      "type": "string"
+    "project_name": {
+      "type": "string",
+      "required": true
     },
-    "Description": {
-      "type": "text"
+    "description": {
+      "type": "text",
+      "required": true
     },
-    "Pro": {
-      "type": "boolean"
+    "pro": {
+      "type": "boolean",
+      "required": true,
+      "default": false
     },
-    "Images": {
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
-    "Date": {
-      "type": "date"
+    "date": {
+      "type": "date",
+      "required": true
     }
   }
 }

@@ -10,6 +10,11 @@ module.exports = ({ env })=>({
             Bucket: process.env.AWS_BUCKET
         }
       },
+      actionOptions: {
+        upload: {},
+        uploadStream: {},
+        delete: {},
+      },
     },
   },
 });

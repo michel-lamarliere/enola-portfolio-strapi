@@ -39,6 +39,11 @@
     "date": {
       "type": "date",
       "required": true
+    },
+    "showsDate": {
+      "type": "boolean",
+      "default": true,
+      "required": true
     }
   }
 }

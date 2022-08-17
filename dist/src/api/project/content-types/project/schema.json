@@ -18,7 +18,8 @@
         },
         "description": {
             "type": "text",
-            "required": true
+            "required": true,
+            "maxLength": 22
         },
         "pro": {
             "type": "boolean",
@@ -38,12 +39,15 @@
         },
         "date": {
             "type": "date",
-            "required": true
+            "required": false
         },
         "showsDate": {
             "type": "boolean",
             "default": true,
-            "required": true
+            "required": false
+        },
+        "dateAltText": {
+            "type": "string"
         }
     }
 }

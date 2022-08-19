@@ -12,14 +12,14 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "project_name": {
+    "projectName": {
       "type": "string",
       "required": true
     },
     "description": {
       "type": "text",
       "required": true,
-      "maxLength": 22
+      "maxLength": 30
     },
     "pro": {
       "type": "boolean",
@@ -41,7 +41,7 @@
       "type": "date",
       "required": false
     },
-    "showsDate": {
+    "showDate": {
       "type": "boolean",
       "default": true,
       "required": false

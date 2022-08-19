@@ -33,7 +33,7 @@
         "images"
       ]
     },
-    "project_url": {
+    "projectUrl": {
       "type": "string"
     }
   }

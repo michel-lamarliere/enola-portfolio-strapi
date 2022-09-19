@@ -12,8 +12,9 @@ const getAuth = async (ctx) => {
       process.env.ENOLA_PORTFOLIO_JWT_SECRET_KEY
     );
   } catch (error) {
+    console.log(error);
     ctx.status = 400;
-    ctx.message = "Error during the creation of the token";
+    ctx.body = { message: "Error during the creation of the token" };
     return;
   }
 

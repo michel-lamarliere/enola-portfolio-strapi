@@ -24,7 +24,7 @@ const getAuth = async (ctx) => {
 };
 
 const submitForm = async (ctx) => {
-  const { language, name, email, message } = ctx.request.params;
+  const { language, name, email, message } = ctx.request.body;
 
   const text = {
     messageToClient: {
@@ -40,26 +40,42 @@ const submitForm = async (ctx) => {
 
   const sendingEmail = new Email(ENOLA_EMAIL_DATA);
 
-  sendingEmail.sendEmailToOwner({
-    subject: "Contact via formulaire de contact",
-    html: `<p>Nom: ${name}</p>
+  try {
+    await sendingEmail.sendEmailToOwner({
+      subject: "Contact via formulaire de contact",
+      html: `<p>Nom: ${name}</p>
       <p>Adresse mail: ${email}</p>
       <br />
       <p>Message: ${message}</p>
       `,
-  });
+    });
+  } catch (error) {
+    ctx.status = 400;
+    ctx.body = {
+      message: "An error occurred when sending an email to the client.",
+    };
+  }
 
-  sendingEmail.sendEmailToClient({
-    to: email,
-    subject: "Enola Louge",
-    html:
-      language === "french"
-        ? text.messageToClient.french
-        : text.messageToClient.english,
-  });
+  try {
+    const test = await sendingEmail.sendEmailToClient({
+      to: email,
+      subject: "Enola Louge",
+      html:
+        language === "french"
+          ? text.messageToClient.french
+          : text.messageToClient.english,
+    });
+
+    console.log(test);
+  } catch (error) {
+    ctx.status = 400;
+    ctx.body = {
+      message: "An error occurred when sending an email to the client.",
+    };
+  }
 
   ctx.status = 200;
-  ctx.body = { message: "successes" };
+  ctx.body = { message: "success" };
 };
 
 module.exports = {

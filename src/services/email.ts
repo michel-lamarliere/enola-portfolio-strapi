@@ -82,6 +82,8 @@ export class Email {
         html: html,
       });
     } catch (error) {
+      console.log(error);
+      new Error("Error when trying to send an email");
       return false;
     }
 

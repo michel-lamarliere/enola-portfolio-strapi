@@ -54,6 +54,8 @@ class Email {
             });
         }
         catch (error) {
+            console.log(error);
+            new Error("Error when trying to send an email");
             return false;
         }
         return true;

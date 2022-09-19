@@ -16,6 +16,7 @@
     "@strapi/strapi": "4.3.4",
     "@types/pg-connection-string": "^2.0.0",
     "better-sqlite3": "7.4.6",
+    "nodemailer": "^6.7.8",
     "pg": "^8.7.3",
     "pg-connection-string": "^2.5.0"
   },
